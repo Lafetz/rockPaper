@@ -1,7 +1,8 @@
-const buttons=document.querySelectorAll("button")
-const rock=document.querySelector('.rock')
-const paper=document.querySelector('.paper')
-const scissor=document.querySelector('.scissor')
+const buttons=document.querySelectorAll("button.choice")
+const rock=document.querySelector('#rock')
+const paper=document.querySelector('#paper')
+const scissor=document.querySelector('#scissor')
+const restartGame=document.querySelector('#restart')
 let scoreHuman=0;
 let scoreComputer=0;
 
@@ -86,15 +87,13 @@ function playround(computerselction,playerselection){
       if(scoreHuman==5){
         totals.textContent='you win'
         buttons.forEach(button=>button.disabled=true);
-        setTimeout(restart,5000);
-      }
-           
-          
+        restartGame.addEventListener('click',restart);
+      }     
      else if(scoreComputer==5){
 
         totals.textContent='you Lose'
         buttons.forEach(button=>button.disabled=true);
-      setTimeout(restart,5000);
+     restartGame.addEventListener('click',restart);
        
       }
       else return;
