@@ -38,7 +38,6 @@ scissor.addEventListener('click',()=>{
 
 
 
-
 function scores(round){
     if(round==1)scoreHuman+=1;
     else if(round==-1)scoreComputer+=1;
@@ -77,8 +76,7 @@ function playround(computerselction,playerselection){
       const humanChoice=document.querySelector("#humanchoice");
       const computerChoice=document.querySelector("#computerchoice");
       const totals=document.querySelector("#total")
-      console.log(scoreHuman)
-      console.log(scoreComputer)
+      restartGame.addEventListener('click',restart);
       humanChoice.textContent=playerc;
       computerChoice.textContent=computerc;
       if(score==1) divH.textContent=scoreHuman;
@@ -87,13 +85,13 @@ function playround(computerselction,playerselection){
       if(scoreHuman==5){
         totals.textContent='you win'
         buttons.forEach(button=>button.disabled=true);
-        restartGame.addEventListener('click',restart);
+        
       }     
      else if(scoreComputer==5){
 
         totals.textContent='you Lose'
         buttons.forEach(button=>button.disabled=true);
-     restartGame.addEventListener('click',restart);
+
        
       }
       else return;
